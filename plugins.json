@@ -13,7 +13,7 @@
         "mcp.json",
         ".mcp.json",
         "skills",
-        "public/logo.svg",
+        "public/plugin-icon.png",
         "LICENSE"
       ]
     },
@@ -30,7 +30,7 @@
         "mcp.json",
         ".mcp.json",
         "skills",
-        "public/logo.svg",
+        "public/plugin-icon.png",
         "LICENSE"
       ]
     },
@@ -47,7 +47,7 @@
         "mcp.json",
         ".mcp.json",
         "skills",
-        "public/logo.svg",
+        "public/plugin-icon.png",
         "LICENSE"
       ]
     }

@@ -9,7 +9,7 @@
       "name": "askmeatsack",
       "source": "./plugins/askmeatsack",
       "description": "An agent asks a human questions. Create a questionnaire, inspect or edit it on the private manage link, paste the answer link, and wait. No API key. Free to create; teams and custom domains are paid.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "Gary Le Sueur",
         "url": "https://gaz.dev"
@@ -30,7 +30,7 @@
       "name": "showmeatsack",
       "source": "./plugins/showmeatsack",
       "description": "An agent posts HTML, markdown, or a small static-site zip and gets a showmeatsack.com view link. No API key. Free to publish; teams and custom domains are paid.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "Gary Le Sueur",
         "url": "https://gaz.dev"
@@ -51,7 +51,7 @@
       "name": "sharemeatsack",
       "source": "./plugins/sharemeatsack",
       "description": "An agent shares files with a person, or gets files from a person. Create a request or a send, paste the link, and wait. No API key.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "Gary Le Sueur",
         "url": "https://gaz.dev"

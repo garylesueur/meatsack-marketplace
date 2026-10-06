@@ -82,7 +82,14 @@ for (const [index, plugin] of registry.plugins.entries()) {
     codexPlugin.interface?.logo && codexPlugin.interface?.composerIcon,
     `OpenAI listing icons missing for ${plugin.name}.`,
   );
-  assert(cursorPlugin.logo === "public/logo.svg", `Cursor logo missing for ${plugin.name}.`);
+  assert(
+    cursorPlugin.logo === codexPlugin.interface.logo.replace(/^\.\//u, ""),
+    `Cursor logo does not match the product icon for ${plugin.name}.`,
+  );
+  assert(
+    cursor.plugins[index].logo === cursorPlugin.logo,
+    `Cursor marketplace logo mismatch for ${plugin.name}.`,
+  );
   const portableMcp = await json(`plugins/${plugin.name}/mcp.json`);
   const clientMcp = await json(`plugins/${plugin.name}/.mcp.json`);
   const endpoint = `${portable.homepage}/mcp`;

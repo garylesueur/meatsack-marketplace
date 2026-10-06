@@ -5,25 +5,25 @@
       "name": "askmeatsack",
       "repository": "garylesueur/askmeatsack",
       "ref": "main",
-      "commit": "f4a69d2c3de34a89bcd88af605e56557c798d3d1",
+      "commit": "82304a1b8519cf77d8393a44b3eeb9da8e98b525",
       "localChanges": false,
-      "version": "0.1.0"
+      "version": "0.1.1"
     },
     {
       "name": "showmeatsack",
       "repository": "garylesueur/showmeatsack",
       "ref": "main",
-      "commit": "6250bf0df6c3e07c1e5695979996c61f0f21ce9b",
+      "commit": "ac54945b98c4b661289f250b525fa988bf609b41",
       "localChanges": false,
-      "version": "0.1.0"
+      "version": "0.1.1"
     },
     {
       "name": "sharemeatsack",
       "repository": "garylesueur/sharemeatsack",
       "ref": "main",
-      "commit": "fb0e9bbe16bbb6b1e3fc345e529fee8953ed28e6",
+      "commit": "9af47a3fed78bce8fcd3ef6ac2c0189469fcacdb",
       "localChanges": false,
-      "version": "0.1.0"
+      "version": "0.1.1"
     }
   ]
 }

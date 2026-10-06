@@ -3,11 +3,15 @@
 Ask questions, publish pages, and share files with a person. One marketplace,
 three independently installable plugins:
 
-| Plugin | What it does | Product |
-| --- | --- | --- |
-| `askmeatsack` | Ask a person questions and wait for answers | [askmeatsack.com](https://askmeatsack.com) |
-| `showmeatsack` | Publish HTML, markdown, or a small static site | [showmeatsack.com](https://showmeatsack.com) |
-| `sharemeatsack` | Send files to a person or request files from them | [sharemeatsack.com](https://sharemeatsack.com) |
+| Icon | Plugin | What it does | Product |
+| --- | --- | --- | --- |
+| <img src="plugins/askmeatsack/public/plugin-icon.png" alt="askmeatsack.com" width="72" height="72"> | `askmeatsack` | Ask a person questions and wait for answers | [askmeatsack.com](https://askmeatsack.com) |
+| <img src="plugins/showmeatsack/public/plugin-icon.png" alt="showmeatsack.com" width="72" height="72"> | `showmeatsack` | Publish HTML, markdown, or a small static site | [showmeatsack.com](https://showmeatsack.com) |
+| <img src="plugins/sharemeatsack/public/plugin-icon.png" alt="sharemeatsack.com" width="72" height="72"> | `sharemeatsack` | Send files to a person or request files from them | [sharemeatsack.com](https://sharemeatsack.com) |
+
+The icons share the cream cloth Meatsack character with a bottom-right badge:
+Ask uses a rust question mark, Show a green presentation screen, and Share a
+slate share symbol. See [icon prompts and provenance](docs/icons.md).
 
 Each package includes the hosted MCP connection, workflow skill, product logo,
 and client listing metadata. No product app checkout, application dependencies,

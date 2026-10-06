@@ -253,7 +253,7 @@ try {
       author: manifest.author,
       category,
       tags: manifest.keywords,
-      logo: "public/logo.svg",
+      logo: manifest.extensions["com.openai"].interface.logo.replace(/^\.\//u, ""),
     })),
   });
 
