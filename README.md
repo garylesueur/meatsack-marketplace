@@ -32,7 +32,8 @@ ChatGPT/Codex or Cursor directories. Those listings require their own review.
 codex plugin marketplace add garylesueur/meatsack-marketplace
 ```
 
-In Plugins, select the **Meatsack** source and install the products you need.
+Restart the desktop app, open Plugins, select the **Meatsack** source, and install
+the products you need.
 For local testing, use the marketplace directory path instead of the GitHub
 shorthand above. This command adds the marketplace; it does not install or enable
 all three plugins automatically.
@@ -63,14 +64,19 @@ For a local install on a personal account:
 
 ```sh
 git clone https://github.com/garylesueur/meatsack-marketplace.git
-mkdir -p ~/.cursor/plugins/local
-ln -s "$PWD/meatsack-marketplace/plugins/askmeatsack" ~/.cursor/plugins/local/askmeatsack
-ln -s "$PWD/meatsack-marketplace/plugins/showmeatsack" ~/.cursor/plugins/local/showmeatsack
-ln -s "$PWD/meatsack-marketplace/plugins/sharemeatsack" ~/.cursor/plugins/local/sharemeatsack
+mkdir -p ~/.cursor/plugins/local/askmeatsack
+cp -R meatsack-marketplace/plugins/askmeatsack/. ~/.cursor/plugins/local/askmeatsack/
+mkdir -p ~/.cursor/plugins/local/showmeatsack
+cp -R meatsack-marketplace/plugins/showmeatsack/. ~/.cursor/plugins/local/showmeatsack/
+mkdir -p ~/.cursor/plugins/local/sharemeatsack
+cp -R meatsack-marketplace/plugins/sharemeatsack/. ~/.cursor/plugins/local/sharemeatsack/
 ```
 
-Link only the plugins you need, then reload Cursor. For local testing, link the
-existing `plugins/<product>` directories rather than cloning from GitHub.
+Copy only the plugins you need, then restart Cursor or run Developer: Reload
+Window. In Customize, confirm that each plugin’s skill and MCP server are
+available. Local plugin imports must be allowed for your account or team.
+Cursor skips local symlinks that point outside its plugin folder. For local
+testing, copy from the existing `plugins/<product>` directories.
 
 See [Cursor's installation documentation](https://prod.cursor.com/docs/plugins).
 
