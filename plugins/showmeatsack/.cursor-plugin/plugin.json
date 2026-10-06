@@ -1,0 +1,22 @@
+{
+  "name": "showmeatsack",
+  "displayName": "showmeatsack.com",
+  "version": "0.1.0",
+  "description": "An agent posts HTML, markdown, or a small static-site zip and gets a showmeatsack.com view link. No API key. Free to publish; teams and custom domains are paid.",
+  "author": {
+    "name": "Gary Le Sueur"
+  },
+  "homepage": "https://showmeatsack.com",
+  "repository": "https://github.com/garylesueur/showmeatsack",
+  "license": "MIT",
+  "logo": "public/logo.svg",
+  "keywords": [
+    "showmeatsack",
+    "html",
+    "share",
+    "mcp",
+    "static-site"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./mcp.json"
+}

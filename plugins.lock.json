@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "plugins": [
+    {
+      "name": "askmeatsack",
+      "repository": "garylesueur/askmeatsack",
+      "ref": "main",
+      "commit": "f4a69d2c3de34a89bcd88af605e56557c798d3d1",
+      "localChanges": false,
+      "version": "0.1.0"
+    },
+    {
+      "name": "showmeatsack",
+      "repository": "garylesueur/showmeatsack",
+      "ref": "main",
+      "commit": "6250bf0df6c3e07c1e5695979996c61f0f21ce9b",
+      "localChanges": false,
+      "version": "0.1.0"
+    },
+    {
+      "name": "sharemeatsack",
+      "repository": "garylesueur/sharemeatsack",
+      "ref": "main",
+      "commit": "fb0e9bbe16bbb6b1e3fc345e529fee8953ed28e6",
+      "localChanges": false,
+      "version": "0.1.0"
+    }
+  ]
+}

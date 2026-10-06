@@ -1,0 +1,44 @@
+{
+  "name": "meatsack",
+  "interface": {
+    "displayName": "Meatsack"
+  },
+  "plugins": [
+    {
+      "name": "askmeatsack",
+      "source": {
+        "source": "local",
+        "path": "./plugins/askmeatsack"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "showmeatsack",
+      "source": {
+        "source": "local",
+        "path": "./plugins/showmeatsack"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "sharemeatsack",
+      "source": {
+        "source": "local",
+        "path": "./plugins/sharemeatsack"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

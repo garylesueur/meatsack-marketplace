@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "showmeatsack.com": {
+      "url": "https://showmeatsack.com/mcp",
+      "type": "http"
+    }
+  }
+}

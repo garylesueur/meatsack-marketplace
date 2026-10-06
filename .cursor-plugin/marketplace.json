@@ -1,0 +1,67 @@
+{
+  "name": "meatsack",
+  "owner": {
+    "name": "Meatsack"
+  },
+  "metadata": {
+    "description": "Ask questions, publish pages, and share files with a person."
+  },
+  "plugins": [
+    {
+      "name": "askmeatsack",
+      "source": "plugins/askmeatsack",
+      "description": "An agent asks a human questions. Create a questionnaire, inspect or edit it on the private manage link, paste the answer link, and wait. No API key. Free to create; teams and custom domains are paid.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Gary Le Sueur",
+        "url": "https://gaz.dev"
+      },
+      "category": "Productivity",
+      "tags": [
+        "askmeatsack",
+        "questionnaire",
+        "mcp",
+        "human-in-the-loop",
+        "forms"
+      ],
+      "logo": "public/logo.svg"
+    },
+    {
+      "name": "showmeatsack",
+      "source": "plugins/showmeatsack",
+      "description": "An agent posts HTML, markdown, or a small static-site zip and gets a showmeatsack.com view link. No API key. Free to publish; teams and custom domains are paid.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Gary Le Sueur",
+        "url": "https://gaz.dev"
+      },
+      "category": "Productivity",
+      "tags": [
+        "showmeatsack",
+        "html",
+        "share",
+        "mcp",
+        "static-site"
+      ],
+      "logo": "public/logo.svg"
+    },
+    {
+      "name": "sharemeatsack",
+      "source": "plugins/sharemeatsack",
+      "description": "An agent shares files with a person, or gets files from a person. Create a request or a send, paste the link, and wait. No API key.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Gary Le Sueur",
+        "url": "https://gaz.dev"
+      },
+      "category": "Productivity",
+      "tags": [
+        "sharemeatsack",
+        "files",
+        "mcp",
+        "file-transfer"
+      ],
+      "logo": "public/logo.svg"
+    }
+  ]
+}
