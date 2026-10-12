@@ -212,7 +212,7 @@ try {
 
   await stageJson(".agents/plugins/marketplace.json", {
     name: "meatsack",
-    interface: { displayName: "Meatsack" },
+    interface: { displayName: "I, Meatsack" },
     plugins: resolvedPlugins.map(({ name, category, authentication }) => ({
       name,
       source: { source: "local", path: `./plugins/${name}` },

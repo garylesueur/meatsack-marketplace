@@ -1,13 +1,13 @@
-# Meatsack marketplace
+# I, Meatsack marketplace
 
 Ask questions, publish pages, and share files with a person. One marketplace,
-three independently installable plugins:
+three independently installable plugins under [I, Meatsack](https://imeatsack.com):
 
 | Icon | Plugin | What it does | Product |
 | --- | --- | --- | --- |
-| <img src="plugins/askmeatsack/public/plugin-icon.png" alt="askmeatsack.com" width="72" height="72"> | `askmeatsack` | Ask a person questions and wait for answers | [askmeatsack.com](https://askmeatsack.com) |
-| <img src="plugins/showmeatsack/public/plugin-icon.png" alt="showmeatsack.com" width="72" height="72"> | `showmeatsack` | Publish HTML, markdown, or a small static site | [showmeatsack.com](https://showmeatsack.com) |
-| <img src="plugins/sharemeatsack/public/plugin-icon.png" alt="sharemeatsack.com" width="72" height="72"> | `sharemeatsack` | Send files to a person or request files from them | [sharemeatsack.com](https://sharemeatsack.com) |
+| <img src="plugins/askmeatsack/public/plugin-icon.png" alt="ask.imeatsack.com" width="72" height="72"> | `askmeatsack` | Ask a person questions and wait for answers | [ask.imeatsack.com](https://ask.imeatsack.com) |
+| <img src="plugins/showmeatsack/public/plugin-icon.png" alt="show.imeatsack.com" width="72" height="72"> | `showmeatsack` | Publish HTML, markdown, or a small static site | [show.imeatsack.com](https://show.imeatsack.com) |
+| <img src="plugins/sharemeatsack/public/plugin-icon.png" alt="share.imeatsack.com" width="72" height="72"> | `sharemeatsack` | Send files to a person or request files from them | [share.imeatsack.com](https://share.imeatsack.com) |
 
 The icons share the cream cloth Meatsack character with a bottom-right badge:
 Ask uses a rust question mark, Show a green presentation screen, and Share a
@@ -115,9 +115,13 @@ A dirty preview is not a release from that commit. Before publishing, regenerate
 from clean, published source refs and run `npm run validate -- --release` to
 check that every `localChanges` is false.
 
+Version 0.1.2 connects directly to `ask.imeatsack.com/mcp`,
+`share.imeatsack.com/mcp` and `show.imeatsack.com/mcp`. Show view links use
+`s.imeatsack.com`. Old product URLs redirect to the new addresses.
+
 Generated outputs are `plugins/`, `plugins.lock.json`, and the three client
-marketplace catalogs. Do not edit them by hand. Product names remain `.com` in
-user-facing copy and MCP tool names; plugin IDs omit `.com` for client compatibility.
+marketplace catalogs. Do not edit them by hand. Product display names and MCP tool names use the canonical product subdomains.
+Plugin IDs remain `askmeatsack`, `sharemeatsack` and `showmeatsack`.
 
 The sync and validation scripts are adapted from
 [Calmtech's marketplace](https://github.com/calmtechltd/calmtech-marketplace)

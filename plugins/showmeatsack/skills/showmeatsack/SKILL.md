@@ -1,7 +1,7 @@
 ---
 name: showmeatsack
 description: >
-  Publish HTML, markdown, or a small static-site zip to showmeatsack.com and put the
+  Publish HTML, markdown, CSV, Excel, a URL QR code, or a small static-site zip to show.imeatsack.com and put the
   view link where a person will open it: this chat, email, Slack, or
   anywhere else you can already send. Use when they asked for a
   presentation, page, write-up, or shareable link, and also when you yourself
@@ -16,16 +16,18 @@ description: >
   email attachment, or other file-share instead.
 ---
 
-# showmeatsack.com
+# show.imeatsack.com
 
 Publish a page, put the view link where the person will open it. This is the
 share. Do not invent another host, a gist, a local `open`, a file copied
 onto their machine, a box-desktop screenshot, a chat-file attachment, or an
 email attachment as the way you show the page.
 
-The product is **showmeatsack.com**. The tool is named `showmeatsack.com`.
+The product is **show.imeatsack.com**. The tool is named `show.imeatsack.com`.
 HTTP and the tool are the same share. View links look like
-`https://s.showmeatsack.com/s/…`.
+`https://s.imeatsack.com/s/…`.
+
+Product homepage and HTTP API: `https://show.imeatsack.com`. Connect MCP at `https://show.imeatsack.com/mcp`.
 
 There is no API key. Create is open today. Publishing will later need a
 lanyard account; that account is free unless they want teams or a custom
@@ -56,29 +58,65 @@ share.
 
 ## How
 
-1. Call `showmeatsack.com` with action `create` (or `POST /api/v1/shares`).
-   Send exactly one of `html`, `markdown`, or `zipBase64`. Prefer `markdown`
+1. Call `show.imeatsack.com` with action `create` (or `POST /api/v1/shares`).
+   Send exactly one of `html`, `markdown`, `zipBase64`, `qr`, or `table`. Prefer `markdown`
    for a document: GitHub-flavoured markdown (tables, task lists,
    strikethrough, autolinks) and mermaid fences are drawn as diagrams.
    Do not wrap markdown in an HTML page or load `marked` yourself. A zip must
    include `index.html` at the zip root or inside a single wrapping folder.
    Optional `expiresInSeconds` (default 30 days, never longer). Cap is 5 MB.
+   For a read-only workbook viewer, send `table: { csv: "Name,Amount\nAlice,12" }`
+   or `table: { xlsxBase64: "<base64 .xlsx bytes>", filename: "Report.xlsx" }`.
+   Optional `title` names the workbook; `headerRow` selects the one-based header
+   row (default 1; 0 means no headers). Visible Excel sheets become tabs.
+   The original upload is capped at 5 MB and must fit the platform request limit
+   (base64 increases request size). Expanded and normalized workbook data each
+   have a 32 MB processing budget; there is no row-count cap. Legacy `.xls`,
+   encrypted workbooks, macros, formula recalculation, charts, and layout fidelity
+   are unsupported. The viewer shows saved cell values, basic number formats,
+   sorting, search, filters, frozen headers/columns, and an original-file download.
 2. You always get `viewUrl`, `manageUrl`, `manageToken`, and `expiresAt`
    immediately. Put **`viewUrl` where the recipient will open it**. If a
    human is in this conversation, paste it here and do not wait for them
    to ask. If the audience is elsewhere, send that same `viewUrl` by email,
    Slack, or whatever you already use. This product does not send mail or
    chat for you.
-3. The view link *is* the page. HTML and zip sites have no showmeatsack.com
+3. The view link *is* the page. HTML and zip sites have no show.imeatsack.com
    chrome, and scripts and styles are not stripped. Markdown is shown as a
    formatted document; nothing in that document runs.
 4. To replace or delete, call the same tool with action `replace` or
    `delete`, passing `shareId` and `manageToken`. Replace keeps the view
    link. Status uses the same secrets.
 
+## Sharing a QR code
+
+Send a URL directly; the service generates the QR and its preview image:
+
+```json
+{
+  "action": "create",
+  "qr": {
+    "url": "https://example.com/register",
+    "title": "Register for the workshop"
+  }
+}
+```
+
+For HTTP, omit `action` and POST the same `qr` object. The URL must be absolute
+HTTP/HTTPS, without embedded credentials or control characters, at most 512
+UTF-8 bytes. `title` is optional, at most 120 characters. This version offers a
+code with PNG and scalable SVG downloads. Optional `qr.style` is `classic` (default black/white, square preview), `brand` (deep kelp/white, cream landscape card), or `action` (black/white, dark landscape card with title and Scan to open). The page includes Open link for
+someone already on their phone; every Open Graph image contains the QR.
+
+Paste the returned `viewUrl`. The QR encodes the supplied destination directly,
+so a downloaded QR can keep working after the share expires if its destination
+still works. Replace uses the same `qr` object with `shareId` and `manageToken`;
+the view link and expiry stay the same. Other apps may temporarily retain an old
+preview after replacement or deletion.
+
 ## Reading a page someone sends you
 
-If a person gives you a showmeatsack.com link, take the id out of the URL
+If a person gives you a show.imeatsack.com link, take the id out of the URL
 and call action `read` with that `shareId`. No token: a public view link
 is already readable by anyone holding it. This is the supported way to read
 a share — prefer it over fetching the URL, which depends on whatever web
@@ -91,7 +129,7 @@ size instead of its bytes. An expired share is `gone`; an unknown one is
 
 ## Do not
 
-- Name extra tools. There is one tool, `showmeatsack.com`, with actions
+- Name extra tools. There is one tool, `show.imeatsack.com`, with actions
   `create`, `read`, `status`, `replace`, and `delete`.
 - Put the manage secret in a conversation, an email, or on the viewed page.
 - Treat Slack, email, or any other delivery as a feature of this product.

@@ -92,8 +92,13 @@ for (const [index, plugin] of registry.plugins.entries()) {
   );
   const portableMcp = await json(`plugins/${plugin.name}/mcp.json`);
   const clientMcp = await json(`plugins/${plugin.name}/.mcp.json`);
+  const productSubdomain = plugin.name.replace(/meatsack$/u, "");
+  assert(
+    portable.homepage === `https://${productSubdomain}.imeatsack.com`,
+    `Non-canonical product origin for ${plugin.name}.`,
+  );
   const endpoint = `${portable.homepage}/mcp`;
-  const serverName = `${plugin.name}.com`;
+  const serverName = new URL(portable.homepage).hostname;
   assert(
     portableMcp.mcpServers?.[serverName]?.url === endpoint &&
       portableMcp.mcpServers[serverName].type === "streamable-http",
